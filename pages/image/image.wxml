@@ -1,0 +1,30 @@
+<!--pages/image/image.wxml-->
+<!-- 1.image的基本使用 -->
+<!-- 
+  1.image的基本使用
+    重点：
+      (1)image组件可以写成单标签，也可以写成双标签
+      (2)image组件有自己默认的大小：320✖240
+      (3)image组件是一个行内块元素
+ -->
+<!-- <image/>
+ <text>哈哈哈</text> -->
+
+<!-- 2.src:本地路径(相对路径、绝对路径)/远程地址 -->
+<!-- 相对路径 -->
+<image src="../../assets/img/timg.jpg" />
+<!-- 绝对路径 -->
+<image src="/assets/img/timg.jpg" />
+<!-- 远程地址 -->
+<image src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1569173849581&di=33632b9e26b10dd88e64dea925ab2a01&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201807%2F27%2F20180727080841_wbxfl.jpeg" />
+
+<!-- 补充：相册中的图片 -->
+<button bindtap="handleChooseAlbum">选中图片</button>
+<image src="{{imagePath}}" />
+
+<!-- 3.bindload:监听图片是否加载完成 -->
+<!-- lazy-load：图片懒加载 -->
+<image src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1569173849581&di=33632b9e26b10dd88e64dea925ab2a01&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201807%2F27%2F20180727080841_wbxfl.jpeg" bindload="handleImageLoad" lazy-load/>
+
+<!-- 4.show-menu-by-longpress:开启长按图片显示识别小程序码菜单 -->
+<image src="/assets/img/timg.jpg" show-menu-by-longpress />

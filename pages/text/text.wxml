@@ -1,0 +1,21 @@
+<!--pages/text/text.wxml-->
+<!-- 1.基本使用 -->
+<text>5SUPERMAN\n</text>
+<text>你好小程序\n</text>
+
+<!-- 2.默认情况下 text中的文本长按是不能选中的，使用 selectable:true就可以了 -->
+<text selectable="{{true}}">5superman\n</text>
+<!-- 或者这么写 -->
+<text selectable>5superman\n</text>
+
+<!-- 3.space:决定文本空格的大小 -->
+<text>Hello World\n</text>
+<text space="nbsp">Hello World\n</text>
+<!-- ensp:半个中文字符的大小 -->
+<text space="ensp">Hello World\n</text>
+<!-- emsp:一个中文字符的大小 -->
+<text space="emsp">Hello World\n</text>
+
+<!-- 4.decode:是否解码文本 -->
+<text>5 &gt; 3\n</text>
+<text decode>5 &gt; 3\n</text>
