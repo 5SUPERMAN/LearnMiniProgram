@@ -1,0 +1,60 @@
+<!--pages/wxml/wxml.wxml-->
+<view class="txt {{isActive ? 'active' : ''}}">哈哈哈</view>
+<button size="mini" bindtap="handleChangeColor">变色</button>
+
+<view>{{nowTime}}</view>
+
+
+<view>-----条件判断-----</view>
+<view wx:if="{{isShow}}">哈哈哈</view>
+<button size="mini" bindtap="handleSwitchShow">显示/隐藏</button>
+
+<!-- wx:if / wx:else -->
+<view wx:if="{{score >= 90}}">优秀---{{score}}分</view>
+<view wx:elif="{{score >= 80}}">良好---{{score}}分</view>
+<view wx:elif="{{score >= 70}}">不错---{{score}}分</view>
+<view wx:elif="{{score >= 60}}">及格---{{score}}分</view>
+<view wx:else>不及格---{{score}}分</view>
+<button size="mini" bindtap="handleIncrement">加6分</button>
+
+<!-- hidden属性:控制显示/隐藏 -->
+<view hidden="{{false}}">我是hidden属性控制的内容</view>
+
+<view>-------列表渲染-------</view>
+<view>-------wx:for循环-------</view>
+<view wx:for="{{['a', 'b', 'c']}}">{{item}}</view>
+<view wx:for="5SUPERMAN">{{item}} {{index}}</view>
+
+<view>-------block标签-------</view>
+<!-- 
+  <block></block>并不是一个组件，它仅仅是一个包装标签元素，不会在页面中做任何渲染
+  只接受控制属性。
+ -->
+<block wx:for="{{2}}">
+  <view wx:if="{{isShow}}">呵呵呵</view>
+  <button size="mini" bindtap="handleSwitchShow">显示/隐藏</button>
+</block>
+
+<view wx:for="{{['小黑','小黄','小红']}}" wx:for-item="name" wx:for-index="id">
+  {{name}} {{id}}
+</view>
+
+<view>--------------template-------------</view>
+<!-- <template name="content">
+  <button>{{btnText}}</button>
+  <view>{{content}}</view>
+</template> -->
+<import src="/wxml/template.wxml" />
+
+<template is="content" data="{{btnText: '666', content: '哇哈哈'}}" />
+
+<!-- 
+  关于 wxml的导入有两种方式：
+    import导入：
+      1.主要是导入 template
+      2.特点：不能进行递归导入
+
+    include引人：
+      1.将公共的 wxml中的组件抽取到一个文件中
+      2.特点：不能导入 template/wxs，可以进行递归导入
+ -->
