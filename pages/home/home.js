@@ -1,66 +1,60 @@
 // pages/home/home.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    titles: ['小黑','小白','小绿']
+  },
+  handleTouchStart() {
+    console.log('touchstart')
+  },
+  handleTouchMove() {
+    console.log('touchmove')
+  },
+  handleTouchEnd() {
+    console.log('touchend')
+  },
+  handleTap() {
+    console.log('tap')
+  },
+  handleLongPress() {
+    console.log('longpress')
+  },
+  handleEventClick(e) {
+    console.log(e)
+  },
+  handleEventEnd(e) {
+    console.log('-----',e)
+  },
+  handleOuter(e) {
+    console.log('outer',e)
+  },
+  handleInner(e) {
+    console.log('inner',e)
+  },
+  handleItemClick(e) {
+    console.log(e)
+    const dataset = e.currentTarget.dataset
+    const title = dataset.item
+    const index = dataset.index
+    console.log(title,index)
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  // 事件冒泡和事件捕获
+  handleCaptureView1() {
+    console.log('handleCaptureView1')
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  handleView1() {
+    console.log('handleView1')
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  handleCaptureView2() {
+    console.log('handleCaptureView2')
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
+  handleView2() {
+    console.log('handleView2')
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
+  handleCaptureView3() {
+    console.log('handleCaptureView3')
   },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  handleView3() {
+    console.log('handleView3')
   }
 })
