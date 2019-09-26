@@ -1,0 +1,8 @@
+/* components/my-style/my-style.wxss */
+.title{
+  background-color: yellow;
+  margin-top: 10px;
+}
+.content{
+  background-color: palegreen;
+}

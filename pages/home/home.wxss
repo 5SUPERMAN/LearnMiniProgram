@@ -1,5 +1,25 @@
 /* pages/home/home.wxss */
 .title{
-  color: pink;
   font-size: 30px;
+  color: royalblue;
+}
+
+.white{
+  color: white;
+  font-size: 20px;
+}
+
+.blue{
+  color: blue;
+  font-size: 20px;
+}
+
+.pink{
+  color: pink;
+  font-size: 20px;
+}
+
+.red{
+  color: red;
+  font-size: 20px;
 }

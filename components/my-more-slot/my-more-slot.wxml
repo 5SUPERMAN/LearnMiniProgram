@@ -1,0 +1,6 @@
+<!--components/my-more-slot/my-more-slot.wxml-->
+<view>我是 more-slot的头部</view>
+  <view><slot name="left" /></view>
+  <view><slot name="center" /></view>
+  <view><slot name="right" /></view>
+<view>我是 more-slot的尾部</view>

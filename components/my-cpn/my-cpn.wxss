@@ -1,0 +1,9 @@
+/* components/my-cpn/my-cpn.wxss */
+.title{
+  text-align: center;
+  color: red;
+}
+.content{
+  text-align: center;
+  color: orange;
+}

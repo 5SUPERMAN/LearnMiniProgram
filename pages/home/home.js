@@ -1,66 +1,35 @@
 // pages/home/home.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    count: 0,
+    isShow: true
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  handleChangeShow() {
+    this.setData({
+      isShow: !this.data.isShow
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  handleIncrement() {
+    this.setData({
+      count: this.data.count + 1
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  handleItemClick(e) {
+    const index = e.detail.index
+    const title = e.detail.title
+    console.log(index, title)
   },
+  handleIncrementSelect() {
+    // 修改 my-select组件中的 count
+    // 获取组件对象
+    const my_select = this.selectComponent("#select-id")
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
+    // 通过 setData修改组件内的 count值（但是这种方式并不合理）
+    // my_select.setData({
+    //   count: my_select.data.count + 1
+    // })
 
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+    // 通过组件内部的方法进行修改 count
+    my_select.incrementCount(10)
   }
 })

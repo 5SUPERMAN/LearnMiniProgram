@@ -1,3 +1,56 @@
 <!--pages/home/home.wxml-->
-<text class="title">Hello World</text>
-<button size="mini">按钮</button>
+<!-- 1.使用自定义组件 -->
+<!-- <my-cpn />
+<my-cpn />
+<my-cpn /> -->
+
+<!-- 2.自定义组件的样式细节 -->
+<!-- <my-style />
+<view class="title">哈哈哈</view> -->
+
+<!-- 3.给自定义组件传递数据/样式 -->
+<!-- <my-prop title="5SUPERMAN" titleclass="red"/>
+<my-prop title="阿珍爱上了阿强" titleclass="white"/>
+<my-prop titleclass="blue"/>
+<my-prop title="哈哈哈" titleclass="pink"/> -->
+
+<!-- 4.组件内部发出事件 -->
+<!-- <view>计数：{{count}}</view>
+<my-event bind:increment="handleIncrement"/> -->
+
+<!-- 5.tab-control -->
+<w-tab-control titles="{{['流行','新款','精选']}}" bind:itemClick="handleItemClick" />
+
+<!-- 6.直接选中组件修改数据/调用方法 -->
+<my-select id="select-id" />
+<button size="mini" bindtap="handleIncrementSelect">修改组件内的数据</button>
+
+<view>--------------------------------------</view>
+
+<!-- 7.插槽的使用 -->
+<!-- 7.1.单个插槽的使用 -->
+<my-slot>
+  <button size="mini">我是插入的按钮</button>
+</my-slot>
+
+<my-slot>
+  <text>哈哈哈哈</text>
+</my-slot>
+
+<my-slot>
+  <slider value="50"></slider>
+</my-slot>
+
+<!-- 7.2.多个插槽的使用 -->
+<!-- 
+  注意：
+    1.给每一个插槽起一个名字 name属性
+    2.必须在 Component对象中添加一个选项：options -> multipleSlots:true
+ -->
+<block wx:if="{{isShow}}">
+  <my-more-slot>
+    <button slot="right" size="mini">我是right</button>
+    <slider slot="left"></slider>
+  </my-more-slot>
+</block>
+<button size="mini" bindtap="handleChangeShow">显示/隐藏</button>
